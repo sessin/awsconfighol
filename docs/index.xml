@@ -109,7 +109,7 @@ SELECT resourceId, resourceName, resourceType, configuration WHERE resourceType 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/authors.html</guid>
-      <description>Timestamp Name Alias Activity     2019.12 Shin Eunsu @eunsshin initial creation   2020.02 Cho Yijeong @yijeong update   2020.03 Cho Yijeong @yijeong update lab based on feedback    Originial content is available at : https://github.com/sessin/awswafhol</description>
+      <description>Timestamp Name Alias Activity     2020.06 Shin Eunsu @eunsshin initial creation    Originial content is available at : https://github.com/sessin/awsconfighol</description>
     </item>
     
   </channel>
