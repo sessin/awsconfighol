@@ -6,9 +6,9 @@ pre = "<b>0-1. </b>"
 +++
 
 ## **AWS Config**
-
+***
 AWS Config는 AWS 계정에 있는 AWS 리소스의 구성을 자세히 보여 줍니다. 이러한 보기에는 리소스 간에 어떤 관계가 있는지와 리소스가 과거에 어떻게 구성되었는지도 포함되므로, 시간이 지나면서 구성과 관계가 어떻게 변하는지 확인할 수 있습니다.
-
+***
 AWS 리소스는 Amazon Elastic Compute Cloud(EC2) 인스턴스, Amazon Elastic Block Store(EBS) 볼륨, 보안 그룹 또는 Amazon Virtual Private Cloud(VPC)와 같이 AWS에서 사용할 수 있는 개체입니다. AWS Config에서 지원되는 AWS 리소스의 전체 목록은 AWS 공식문서의 [AWS Config 지원 리소스 유형 및 리소스 관계 단원](https://docs.aws.amazon.com/ko_kr/config/latest/developerguide/resource-config-reference.html)을 참조하십시오.
 
 {{% notice tip %}}

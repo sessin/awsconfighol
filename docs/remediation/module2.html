@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="kr" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="AWS Config Hands on LAB" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="description" content="AWS Config Hands on LAB">
+<meta name="author" content="Eunsu Shin">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>문제 해결의 사용 :: AWS Config Hands on LAB</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-awskr.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="/remediation/module2.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/overview.html" title="실습 개요" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../overview.html">
+          <b>0. </b>실습 개요
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/overview/module1.html" title="사전 지식" class="dd-item ">
+        <a href="../overview/module1.html">
+        <b>0-1. </b>사전 지식
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/overview/module2.html" title="사전 준비 사항" class="dd-item ">
+        <a href="../overview/module2.html">
+        <b>0-2. </b>사전 준비 사항
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/pre.html" title="실습 환경 구성" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../pre.html">
+          <b>1. </b>실습 환경 구성
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pre/module1.html" title="EC2 인스턴스 설치" class="dd-item ">
+        <a href="../pre/module1.html">
+        <b>1.1 </b>EC2 인스턴스 설치
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/config.html" title="AWS Config 를 이용한 규정 준수 확인" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../config.html">
+          <b>2. </b>AWS Config 를 이용한 규정 준수 확인
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/config/module1.html" title="AWS Config 활성화" class="dd-item ">
+        <a href="../config/module1.html">
+        <b>3.1 </b>AWS Config 활성화
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/config/module2.html" title="고급 쿼리의 사용" class="dd-item ">
+        <a href="../config/module2.html">
+        <b>3.2 </b>고급 쿼리의 사용
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/config/module3.html" title="규칙 추가" class="dd-item ">
+        <a href="../config/module3.html">
+        <b>3.3 </b>규칙 추가
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/config/module4.html" title="규칙 준수 확인" class="dd-item ">
+        <a href="../config/module4.html">
+        <b>3.4 </b>규칙 준수 확인
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/remediation.html" title="문제 해결" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../remediation.html">
+          <b>3. </b>문제 해결
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/remediation/module1.html" title="SSM 문서 생성" class="dd-item ">
+        <a href="../remediation/module1.html">
+        <b>3.1 </b>SSM 문서 생성
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/remediation/module2.html" title="문제 해결의 사용" class="dd-item active">
+        <a href="../remediation/module2.html">
+        <b>3.2 </b>문제 해결의 사용
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post.html" title="마무리" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../post.html">
+          <b>4. </b>마무리
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://github.com/yijeong/awswafhol"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="../authors.html"><i class='fas fa-users'></i> Authors</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2019 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../'>AWS Config 실습</a> > <a href='../remediation.html'>문제 해결</a> > 문제 해결의 사용
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#문제-해결-등록">&ldquo;문제 해결&rdquo; 등록</a></li>
+<li><a href="#문제-해결-작업-결과-확인">문제 해결 작업 결과 확인</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+
+      
+        <div id="body-inner">
+          <h1>문제 해결의 사용</h1>
+          
+          
+
+
+
+
+<hr />
+
+<h3 id="문제-해결-등록">&ldquo;문제 해결&rdquo; 등록</h3>
+
+<p>AWS Config 규칙에서의 문제 해결 작업은 AWS Systems Manager Automation을 사용하여 실행됩니다. 이전 과정에서 생성한 사용자 정의 Automation 을 AWS Config 규칙의 &ldquo;문제 해결&rdquo; 로 지정하여 사용하도록 하겠습니다.</p>
+
+<ol>
+<li>&ldquo;문제 해결&rdquo; 을 기존에 사용한 AWS Config 규칙에 등록하기 위하여 아래 화면과 같이 AWS Config 규칙으로 이동한 후 &ldquo;restricted-ssh&rdquo; 를 선택하고 &ldquo;문제 해결 관리&rdquo; 버튼을 클릭합니다.
+<img src="../images/create_remediation.png" alt="Create Document" /></li>
+<li>화면 중앙의 &ldquo;문제 해결 작업&rdquo; 의 메뉴에서 &ldquo;DisablePublicSSH&rdquo; 를 찾아서 선택합니다. &ldquo;자동 수정&rdquo; 옵션은 이 실습에서는 사용하지 않도록 &ldquo;아니요&rdquo;를 선택합니다. 리소스 ID 파라미터는 &ldquo;GroupId&rdquo; 를 선택합니다. 그리고 마지막으로 &ldquo;저장&rdquo; 버튼을 클릭합니다.
+
+<div class="notices warning" ><p>&ldquo;자동 수정&rdquo; 옵션이 &ldquo;예&rdquo; 로 선택되어 있는 경우 문제 해결 작업이 바로 실행이 되게됩니다. 따라서, 문제 해결 작업이 즉시 실행되어 예기치 않은 상황이 발생할 수 있으므로 실제 운영 환경에서는 등록되는 &ldquo;문제 해결&rdquo; 작업이 정확하게 어떤 기능으로 구현이 되어 있으며 &ldquo;문제 해결&rdquo; 적용 시 어떤 영향이 발생할 수 있는지 정확하게 파악한 후 &ldquo;자동 수정&rdquo; 옵션을 활성화하시기 바랍니다.</p>
+</div>
+
+<img src="../images/create_remediation2.png" alt="Create Document" /></li>
+<li>&ldquo;문제 해결&rdquo; 등록이 정상적으로 완료된 상태에서 &ldquo;문제 해결&rdquo; 적용을 위하여 아래와 같이 &ldquo;restrcited-ssh&rdquo; 규칙에 &ldquo;미준수&rdquo; 상태로 되어 있는 Security Group 을 선택한 후 &ldquo;문제 해결&rdquo; 버튼을 클릭합니다.
+<img src="../images/create_remediation3.png" alt="Create Document" /></li>
+<li>정상적으로 &ldquo;문제 해결&rdquo; 이 진행되면 아래와 같이 &ldquo;작업이 성공적으로 실행되었습니다.&rdquo; 라는 메시지를 확인하실 수 있습니다.
+<img src="../images/create_remediation4.png" alt="Create Document" /></li>
+</ol>
+
+<h3 id="문제-해결-작업-결과-확인">문제 해결 작업 결과 확인</h3>
+
+<p>조금 전 실행한 AWS Config 규칙의 문제 해결 작업이 실제로 정상적으로 완료되었는지 확인하기 위하여 EC2 메뉴의 Secuirty Group 설정을 확인하도록 하겠습니다.</p>
+
+<ul>
+<li><p>아래와 같이 EC2 Security Group 메뉴로 이동한 후 &ldquo;인바운드 규칙&rdquo; 메뉴를 클릭하여 인바운드 규칙 중 0.0.0.0/0 Port 22 규칙이 제거되어 있는 것을 확인하시기 바랍니다.
+<img src="../images/remediation_result1.png" alt="Create Document" /></p></li>
+
+<li><p>AWS Config 규칙에서도 아래와 같이 &ldquo;restricted-ssh&rdquo; 규칙의 상태가 &ldquo;준수&rdquo; 상태인 것을 확인합니다.
+<img src="../images/remediation_result2.png" alt="Create Document" /></p></li>
+</ul>
+
+
+<div class="notices tip" ><p>&ldquo;문제 해결&rdquo; 작업이 성공적으로 완료되더라도 Config 규칙의 상태가 &ldquo;미준수&rdquo; 에서 &ldquo;준수&rdquo; 로 바뀌는데에는 몇 분의 시간이 소요될 수 있으니 잠시 기다리셨다가 확인하시기 바랍니다.</p>
+</div>
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../remediation/module1.html" title="SSM 문서 생성"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../post.html" title="마무리" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+  </body>
+</html>
+

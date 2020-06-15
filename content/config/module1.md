@@ -8,6 +8,7 @@ pre = "<b>3.1 </b>"
 
  AWS Config 를 이용하여 AWS 자원에 대한 구성 변경 추적 및 규정 준수 여부에 대한 확인을 위해서는 먼저 AWS Config 가 활성화되어야 합니다. 아래의 절차에 따라 AWS Config 를 활성화하시기 바랍니다.
 
+* * *
 ### AWS Config 활성화
 
 1. AWS Config 를 활성화하기 위하여 AWS 메뉴 중 Config 서비스 메뉴로 이동합니다. AWS Config 가 활성화되어 있지 않은 경우 아래와 같이 AWS Config 화면 접속 시 "시작하기" 버튼이 있는 것을 확인할 수 있습니다. AWS Config 활성화를 위하여 "시작하기" 버튼을 클릭합니다.

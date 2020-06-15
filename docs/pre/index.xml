@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>실습 환경 구성 on AWS Config Hands on LAB</title>
+    <link>/pre.html</link>
+    <description>Recent content in 실습 환경 구성 on AWS Config Hands on LAB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 15 Oct 2019 15:09:31 +0900</lastBuildDate>
+    
+	<atom:link href="/pre/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EC2 인스턴스 설치</title>
+      <link>/pre/module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pre/module1.html</guid>
+      <description>EC2 인스턴스 환경 구성 이번 모듈에서는 위협 요인이 내재된 환경을 구성하기 위해 CloudFormation을 실행합니다. CloudFormation을 통해 다음과 같은 AWS 리소스가 생성됩니다.
+   AWS 서비스 유형 리소스명 기타     EC2 인스턴스 WebServerInstance t2.micro   VPC VPC 10.10.0.0/16   VPC Subnet PublicSubnet 10.10.0.0/18   VPC Subnet PrivateSubnet 10.10.64.0/18    |기타 서비스| Elastic IP, Route table, Security Groups, Network ACL, IAM Role 등|</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS Config 를 이용한 규정 준수 확인 on AWS Config Hands on LAB</title>
+    <link>/config.html</link>
+    <description>Recent content in AWS Config 를 이용한 규정 준수 확인 on AWS Config Hands on LAB</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 15 Oct 2019 15:09:31 +0900</lastBuildDate>
+    
+	<atom:link href="/config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS Config 활성화</title>
+      <link>/config/module1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/config/module1.html</guid>
+      <description>AWS Config 를 이용하여 AWS 자원에 대한 구성 변경 추적 및 규정 준수 여부에 대한 확인을 위해서는 먼저 AWS Config 가 활성화되어야 합니다. 아래의 절차에 따라 AWS Config 를 활성화하시기 바랍니다.
+AWS Config 활성화  AWS Config 를 활성화하기 위하여 AWS 메뉴 중 Config 서비스 메뉴로 이동합니다. AWS Config 가 활성화되어 있지 않은 경우 아래와 같이 AWS Config 화면 접속 시 &amp;ldquo;시작하기&amp;rdquo; 버튼이 있는 것을 확인할 수 있습니다. AWS Config 활성화를 위하여 &amp;ldquo;시작하기&amp;rdquo; 버튼을 클릭합니다.</description>
+    </item>
+    
+    <item>
+      <title>고급 쿼리의 사용</title>
+      <link>/config/module2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/config/module2.html</guid>
+      <description>이번에는 AWS Config 가 활성화된 상태에서 AWS Config 가 제공하는 &amp;ldquo;고급 쿼리&amp;rdquo; 기능을 사용해보도록 하겠습니다.
+고급 쿼리 실행  &amp;ldquo;고급 쿼리&amp;rdquo; 기능을 사용하기 위하여 AWS Config 메뉴에서 &amp;ldquo;고급 쿼리&amp;rdquo; 를 클릭합니다.  &amp;ldquo;고급 쿼리&amp;rdquo; 메뉴에서 새로운 쿼리를 실행하기 위하여 &amp;ldquo;새 쿼리&amp;rdquo; 버튼을 클릭합니다.  새로운 쿼리를 입력하기 위하여 아래의 쿼리를 복사한 후 붙여넣습니다. 붙여넣기가 완료되면 하단의 &amp;ldquo;실행&amp;rdquo; 버튼을 클릭하여 고급 쿼리를 실행합니다.
+SELECT resourceId, resourceName, resourceType, configuration WHERE resourceType = &#39;AWS::EC2::SecurityGroup&#39;   쿼리가 성공하는 경우 아래와 같이 CloudFormation 을 통하여 생성한 Security Group 이 출력되는 것을 확인할 수 있습니다.</description>
+    </item>
+    
+    <item>
+      <title>규칙 추가</title>
+      <link>/config/module3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/config/module3.html</guid>
+      <description>이번에는 여러분들이 EC2 인스턴스나 ALB 등에 사용하시는 Security Group 의 설정을 감시할 수 있는 AWS Config 규칙을 생성해보도록 하겠습니다. AWS 에서는 여러분들이 자주 사용하시는 규칙을 관리형으로 제공하고 있으며 이렇게 제공되는 관리형 규칙과 함께 여러분들이 직접 작성하신 사용자 지정 규칙도 함께 사용하실 수 있습니다.
+이 과정에서는 편의상 AWS 관리형 규칙을 추가하도록 하겠습니다.
+ 새로운 AWS Config 규칙 추가를 위해 AWS Config 메뉴에서 &amp;ldquo;규칙&amp;rdquo; 을 선택한 후 &amp;ldquo;규칙 추가&amp;rdquo; 버튼을 클릭합니다.  &amp;ldquo;규칙 유형 선택&amp;rdquo; 에서 &amp;ldquo;AWS 관리형 규칙 추가&amp;rdquo; 를 선택한 후 &amp;ldquo;ssh&amp;rdquo; 를 검색어로 사용하여 &amp;ldquo;restricted-ssh&amp;rdquo; 규칙을 찾아 선택한 후 &amp;ldquo;다음&amp;rdquo; 버튼을 클릭합니다.</description>
+    </item>
+    
+    <item>
+      <title>규칙 준수 확인</title>
+      <link>/config/module4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/config/module4.html</guid>
+      <description>이번에는 Security Group 의 설정을 변경하여 이전 과정에서 생성된 AWS Config 규칙이 변경된 Security Group 의 설정을 잘 감시하는지 확인해보도록 하겠습니다.
+ Security Group 의 설정을 변경하기 위해 EC2 메뉴로 이동한 후 아래와 같이 EC2 인스턴스에 할당되어 있는 Security Group 을 선택한 후 &amp;ldquo;인바운드 규칙 편집&amp;rdquo; 버튼을 클릭합니다.  SSH 에 설정되어 있는 1.2.3.4&amp;frasl;32 정책을 &amp;ldquo;삭제&amp;rdquo;버튼을 클릭하여 삭제합니다.  &amp;ldquo;규칙 추가&amp;rdquo; 버튼을 클릭한 후 아래 화면과 같이 SSH 에 대해 &amp;ldquo;위치 무관&amp;rdquo; 하게 접근할 수 있도록 정책을 추가한 후 &amp;ldquo;규칙 저장&amp;rdquo; 버튼을 클릭합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -23,3 +23,7 @@ WHERE resourceType = 'AWS::EC2::SecurityGroup'
 
 4. 쿼리가 성공하는 경우 아래와 같이 CloudFormation 을 통하여 생성한 Security Group 이 출력되는 것을 확인할 수 있습니다.
 ![Advanced Query](/images/advancedquery4.png)
+
+{{% notice tip %}}
+ AWS Config 에서 제공하는 "고급 쿼리" 기능은 간단한 쿼리 구문을 이용하여 단일 계정 혹은 애그리게이터를 통해 생성된 복수 계정 및 복수 리전에 대한 쿼리가 가능하며 사용자 정의 쿼리뿐만 아니라 AWS 관리형 쿼리도 제공하고 있습니다. 
+{{% /notice %}}

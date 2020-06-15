@@ -19,7 +19,7 @@ pre = "<b>1.1 </b>"
 |기타 서비스|	Elastic IP, Route table, Security Groups, Network ACL, IAM Role 등|
 
 
-1. AWS 리전 확인
+- AWS 리전 확인
 
 	a.	이번 실습은 AWS **서울 (ap-northeast-2)** 리전에서 수행됩니다.
 	
@@ -29,10 +29,10 @@ pre = "<b>1.1 </b>"
 ![Region Select](/images/region_select.png)
 
 {{% notice info %}}
-본 실습 의 모든 과정은 서울 리전에서 이루어집니다. 원활한 실습 진행을 위해서 반드시 서울 리전이 선택되었는지를 확인하시기 바랍니다.
+본 실습의 모든 과정은 서울 리전에서 이루어집니다. 원활한 실습 진행을 위해서 반드시 서울 리전이 선택되었는지를 확인하시기 바랍니다.
 {{% /notice %}}
 
-2. EC2 키페어 생성 **(이미 생성된 경우 이 단계 생략)**
+- EC2 키페어 생성 **(이미 생성된 경우 이 단계 생략)**
 
 	a.	EC2 키페어는 EC2인스턴스 생성을 위해 필요한 항목이므로, CloudFormation 템플릿을 실행하기에 앞서 EC2 키페어를 생성합니다. 
 	
@@ -46,8 +46,7 @@ pre = "<b>1.1 </b>"
 	
 ![Keypair Creation](/images/keypair.png)
 
-
-3. CloudFormation 템플릿 실행
+- CloudFormation 템플릿 실행
 
 	a.	CloudFormation은 템플릿 파일 (json, yml)에 EC2 인스턴스, 네트워크 구성 등의 클라우드 인프라 리소스를 모델링하고 클라우드 환경에서 프로비저닝할 수 있는 서비스입니다. 
 	
@@ -62,9 +61,3 @@ pre = "<b>1.1 </b>"
 {{% notice info %}}
  EC2 인스턴스 생성에 사용된 템플릿은 별도의 VPC 와 EIP 등을 추가로 생성하므로  기존에 사용하던 계정에 VPC 나 EIP 의 수가 한계에 도달한 경우 스택 생성이 실패하게 됩니다.
 {{% /notice %}}
-
-* * *
-
-CloudFormation stack을 통해 아래와 환경이 준비됩니다. 
-![Lab Diagram](/images/lab_diagram.png)
-
